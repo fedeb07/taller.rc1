@@ -39,3 +39,29 @@ int main()
 
     return 0;
 }
+
+// FUNCION PARA INGRESAR NOTAS
+void ingresarNotas(float notas[][3], int estudiantes)
+{
+    int i, j;
+
+    for(i = 0; i < estudiantes; i++)
+    {
+        printf("\nEstudiante %d\n", i + 1);
+
+        for(j = 0; j < 3; j++)
+        {
+            do
+            {
+                printf("Ingrese nota de la asignatura %d (0-10): ", j + 1);
+                scanf("%f", &notas[i][j]);
+
+                if(notas[i][j] < 0 || notas[i][j] > 10)
+                {
+                    printf("ERROR: Nota invalida.\n");
+                }
+
+            } while(notas[i][j] < 0 || notas[i][j] > 10);
+        }
+    }
+}
