@@ -1,5 +1,20 @@
 #include <stdio.h>
 
+// FUNCION PARA INGRESAR NOTAS
+void ingresarNotas(float notas[][3], int estudiantes);
+
+// FUNCION PARA MOSTRAR PROMEDIO POR ESTUDIANTE
+void promedioEstudiante(float notas[][3], int estudiantes);
+
+// FUNCION PARA MOSTRAR PROMEDIO POR ASIGNATURA
+void promedioAsignatura(float notas[][3], int estudiantes);
+
+// FUNCION PARA MOSTRAR NOTA ALTA Y BAJA
+void notasAltasBajas(float notas[][3], int estudiantes);
+
+// FUNCION PARA APROBADOS Y REPROBADOS
+void aprobadosReprobados(float notas[][3], int estudiantes);
+
 int main()
 {
     int estudiantes;
@@ -7,7 +22,20 @@ int main()
     printf("Ingrese el numero de estudiantes: ");
     scanf("%d", &estudiantes);
 
+    // MATRIZ PARA GUARDAR LAS NOTAS
     float notas[estudiantes][3];
+
+    ingresarNotas(notas, estudiantes);
+
+    printf("\n===== RESULTADOS =====\n");
+
+    promedioEstudiante(notas, estudiantes);
+
+    promedioAsignatura(notas, estudiantes);
+
+    notasAltasBajas(notas, estudiantes);
+
+    aprobadosReprobados(notas, estudiantes);
 
     return 0;
 }
