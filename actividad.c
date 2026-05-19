@@ -9,6 +9,11 @@ void promedioEstudiante(float notas[][3], int estudiantes);
 // FUNCION PARA MOSTRAR PROMEDIO POR ASIGNATURA
 void promedioAsignatura(float notas[][3], int estudiantes);
 
+// FUNCION PARA MOSTRAR NOTA ALTA Y BAJA
+void notasAltasBajas(float notas[][3], int estudiantes);
+
+// FUNCION PARA APROBADOS Y REPROBADOS
+void aprobadosReprobados(float notas[][3], int estudiantes);
 
 int main()
 {
