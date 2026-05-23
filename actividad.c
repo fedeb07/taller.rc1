@@ -112,7 +112,39 @@ void promedioAsignatura(float notas[][3], int estudiantes)
     }
 }
 
-// NOTA ALTA Y BAJA
+// NOTA MAS ALTA Y BAJA POR ESTUDIANTE
+void notasEstudiante(float notas[][3], int estudiantes)
+{
+    int i, j;
+    float mayor, menor;
+
+    printf("\n--- Nota mas alta y baja por estudiante ---\n");
+
+    for(i = 0; i < estudiantes; i++)
+    {
+        mayor = notas[i][0];
+        menor = notas[i][0];
+
+        for(j = 1; j < 3; j++)
+        {
+            if(notas[i][j] > mayor)
+            {
+                mayor = notas[i][j];
+            }
+
+            if(notas[i][j] < menor)
+            {
+                menor = notas[i][j];
+            }
+        }
+
+        printf("Estudiante %d\n", i + 1);
+        printf("Nota mas alta: %.2f\n", mayor);
+        printf("Nota mas baja: %.2f\n", menor);
+    }
+}
+
+// NOTA ALTA Y BAJA POR ASIGNATURA
 void notasAltasBajas(float notas[][3], int estudiantes)
 {
     int i, j;
@@ -174,3 +206,4 @@ void aprobadosReprobados(float notas[][3], int estudiantes)
         printf("Reprobados: %d\n", reprobados);
     }
 }
+
