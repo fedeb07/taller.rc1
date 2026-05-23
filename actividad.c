@@ -143,3 +143,34 @@ void notasAltasBajas(float notas[][3], int estudiantes)
         printf("Nota mas baja: %.2f\n", menor);
     }
 }
+
+// APROBADOS Y REPROBADOS
+void aprobadosReprobados(float notas[][3], int estudiantes)
+{
+    int i, j;
+    int aprobados, reprobados;
+
+    printf("\n--- Aprobados y reprobados ---\n");
+
+    for(j = 0; j < 3; j++)
+    {
+        aprobados = 0;
+        reprobados = 0;
+
+        for(i = 0; i < estudiantes; i++)
+        {
+            if(notas[i][j] >= 6)
+            {
+                aprobados++;
+            }
+            else
+            {
+                reprobados++;
+            }
+        }
+
+        printf("Asignatura %d\n", j + 1);
+        printf("Aprobados: %d\n", aprobados);
+        printf("Reprobados: %d\n", reprobados);
+    }
+}
