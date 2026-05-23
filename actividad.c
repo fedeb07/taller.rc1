@@ -88,3 +88,26 @@ void promedioEstudiante(float notas[][3], int estudiantes)
         printf("Estudiante %d: %.2f\n", i + 1, promedio);
     }
 }
+
+// PROMEDIO POR ASIGNATURA
+void promedioAsignatura(float notas[][3], int estudiantes)
+{
+    int i, j;
+    float suma, promedio;
+
+    printf("\n--- Promedio por asignatura ---\n");
+
+    for(j = 0; j < 3; j++)
+    {
+        suma = 0;
+
+        for(i = 0; i < estudiantes; i++)
+        {
+            suma += notas[i][j];
+        }
+
+        promedio = suma / estudiantes;
+
+        printf("Asignatura %d: %.2f\n", j + 1, promedio);
+    }
+}
